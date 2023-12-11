@@ -59,7 +59,7 @@ const Footer = () => {
     </TouchableOpacity>
     <TouchableOpacity
       style={styles.menuContainer}
-      // onPress={() => navigation.navigate("cart")}
+      onPress={() => navigation.navigate("cart")}
     >
       <AntDesign
         style={[styles.icon, route.name === "cart" && styles.active]}
