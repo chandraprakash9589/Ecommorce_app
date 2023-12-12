@@ -2,27 +2,37 @@ import React from 'react';
 import {StatusBar, Text, View} from 'react-native';
 import Home from './screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import About from './screens/About';
 import ProductsDetails from './screens/ProductsDetails';
 import Cart from './screens/Cart';
+import Checkout from './screens/Checkout';
+import Payment from './screens/Payment';
+import Login from './screens/auth/Login';
 
 //routes
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator >
-      <Stack.Screen name="home" component={Home} 
-      options={{
-        headerShown:false,
-      }}
-      />
-      <Stack.Screen name="mobile" component={About}/>
-      <Stack.Screen name="productDetails" component={ProductsDetails}/>
-      <Stack.Screen name="notifications" component={About}/>
-      <Stack.Screen name="cart" component={Cart}/>
-
+      <Stack.Navigator initialRouteName='login'>
+        <Stack.Screen
+          name="home"
+          component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen name="mobile" component={About} />
+        <Stack.Screen name="productDetails" component={ProductsDetails} />
+        <Stack.Screen name="checkout" component={Checkout} />
+        <Stack.Screen name="login" component={Login} options={{
+          headerShown:false
+        }} />
+        <Stack.Screen name="payment" component={Payment} />
+        <Stack.Screen name="notifications" component={About} />
+        <Stack.Screen name="cart" component={Cart} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,0 +1,1 @@
+export const login_signUp = require("../assets/login_signUp.png");

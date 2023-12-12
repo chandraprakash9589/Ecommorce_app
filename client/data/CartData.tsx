@@ -9,36 +9,7 @@ export const CartData = [
         category: "mobile",
         imageUrl: "https://m.media-amazon.com/images/I/71bErtQPC3L._SL1500_.jpg",
       },
-      {
-        _id: 2,
-        name: "Apple iPhone 15 Plus (256 GB) - Pink",
-        description:
-          "DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO",
-        price: 900,
-        quantity: 1,
-        category: "mobile",
-        imageUrl: "https://m.media-amazon.com/images/I/71bErtQPC3L._SL1500_.jpg",
-      },
-      {
-        _id: 3,
-        name: "Apple iPhone 15 Plus (256 GB) - Pink",
-        description:
-          "DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO",
-        price: 900,
-        quantity: 1,
-        category: "mobile",
-        imageUrl: "https://m.media-amazon.com/images/I/71bErtQPC3L._SL1500_.jpg",
-      },
-      {
-        _id: 4,
-        name: "Apple iPhone 15 Plus (256 GB) - Pink",
-        description:
-          "DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO DYNAMIC ISLAND COMES TO IPHONE 15, INNOVATIVE DESIGN 48MP MAIN CAMERA WITH 2X TELEPHOTO",
-        price: 900,
-        quantity: 1,
-        category: "mobile",
-        imageUrl: "https://m.media-amazon.com/images/I/71bErtQPC3L._SL1500_.jpg",
-      },
+     
 
     
   ];
