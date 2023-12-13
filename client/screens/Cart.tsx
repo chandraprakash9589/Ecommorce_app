@@ -1,5 +1,11 @@
 //@ts-nocheck
-import {View, Text, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import {CartData} from '../data/CartData';
 import PriceTable from '../components/Cart/PriceTable';
@@ -19,7 +25,7 @@ const Cart = ({navigation}) => {
         <>
           <ScrollView>
             {cartItem?.map(item => (
-              <CartItem item={item}key={item._id} />
+              <CartItem item={item} key={item._id} />
             ))}
           </ScrollView>
 
@@ -30,8 +36,10 @@ const Cart = ({navigation}) => {
             <View style={styles.grandTotal}>
               <PriceTable title={'Grand Total'} price={101} />
             </View>
-            <TouchableOpacity style={styles.btnCheckout}onPress={()=>navigation.navigate("checkout")}>
-                <Text style={styles.btnCheckoutText}>CHECKOUT</Text>
+            <TouchableOpacity
+              style={styles.btnCheckout}
+              onPress={() => navigation.navigate('checkout')}>
+              <Text style={styles.btnCheckoutText}>CHECKOUT</Text>
             </TouchableOpacity>
           </View>
         </>
@@ -50,23 +58,20 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
     backgroundColor: '#ffffff',
   },
-  btnCheckout:{
-marginTop:20,
-justifyContent:'center',
-alignItems:'center',
-height:40,
-backgroundColor:"#1967d2",
-width:'90%',
-marginHorizontal:20,
-borderRadius:20,
-
-
-
-},
-  btnCheckoutText:{
-    color:"#fffff",
-    fontWeight:"bold",
-    fontSize:18
-  }
+  btnCheckout: {
+    marginTop: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    backgroundColor: '#1967d2',
+    width: '90%',
+    marginHorizontal: 20,
+    borderRadius: 20,
+  },
+  btnCheckoutText: {
+    color: '#fffff',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
 });
 export default Cart;

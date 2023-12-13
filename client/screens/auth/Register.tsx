@@ -9,45 +9,77 @@ import {
   Alert,
 } from 'react-native';
 import React, {useState} from 'react';
-import {login_signUp} from '../../assets/assets';
 import InputBox from '../../components/Form/InputBox';
-const Login = ({navigation}) => {
+import { register } from '../../assets/assets';
+const Register = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-const handleLogin=()=>{
-if(!email ||!password){
-  return Alert.alert("Please add email or password")
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [contact, setContact] = useState('');
+
+
+const handleRegister=()=>{
+if(!email ||!password ||!name ||!address||!city){
+  return Alert.alert("Please provide all fields")
 }
-Alert.alert("Login Successfully")
-navigation.navigate("home")
+Alert.alert("Register Successfully")
+navigation.navigate("login")
 
 }
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={login_signUp} />
+      <Image style={styles.image} source={register} />
+      <InputBox
+        placeholder={'Enter You Name'}
+        value={name}
+        setValue={setName}
+        autoComplete={'name'}
+      />
       <InputBox
         placeholder={'Enter You Email'}
         value={email}
         setValue={setEmail}
         autoComplete={'email'}
       />
+
       <InputBox
         value={password}
         setValue={setPassword}
         placeholder={'Enter You Password'}
         secureTextEntry={true}
       />
+      <InputBox
+        value={address}
+        setValue={setAddress}
+        placeholder={'Enter You address'}
+        autoComplete={'address-line1'}
+      />
+    
+      <InputBox
+        value={city}
+        setValue={setCity}
+        placeholder={'Enter You city'}
+        autoComplete={'country'}
+      />
+      <InputBox
+        value={contact}
+        setValue={setContact}
+        placeholder={'Enter You contact no'}
+        autoComplete={'tel'}
+      />
       <View style={styles.btnContainer}>
-        <TouchableOpacity style={styles.loginBtn} onPress={()=>handleLogin()}>
-          <Text style={styles.loginBtnText}>Login</Text>
+        <TouchableOpacity style={styles.loginBtn} onPress={()=>handleRegister()}>
+          <Text style={styles.loginBtnText}>Register</Text>
         </TouchableOpacity>
         <Text>
-          Not a user yet ? Please{""}
+          Already  a user Please ?{""}
         
         <Text style={styles.link}
-        onPress={()=>navigation.navigate("register")}
+        onPress={()=>navigation.navigate("login")}
         >
-          Register !
+          Login !
         </Text>
         </Text>
       </View>
@@ -88,4 +120,4 @@ const styles = StyleSheet.create({
     color: 'red',
   },
 });
-export default Login;
+export default Register
