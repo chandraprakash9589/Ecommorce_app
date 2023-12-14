@@ -13,6 +13,7 @@ import Register from './screens/auth/Register';
 import Account from './screens/Account/Account';
 import Notification from './screens/Account/Notification';
 import Profile from './screens/Account/Profile';
+import MyOrders from './screens/Account/MyOrders';
 
 //routes
 const Stack = createNativeStackNavigator();
@@ -43,6 +44,7 @@ const App = () => {
         <Stack.Screen name="payment" component={Payment} />
         <Stack.Screen name="notifications" component={Notification} />
         <Stack.Screen name="profile" component={Profile} />
+        <Stack.Screen name="myorders" component={MyOrders} />
         <Stack.Screen name="cart" component={Cart} />     
       </Stack.Navigator>
     </NavigationContainer>

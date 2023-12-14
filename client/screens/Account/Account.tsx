@@ -22,11 +22,11 @@ const Account = ({navigation}) => {
           <Text style={styles.heading}>Account Setting</Text>
           <TouchableOpacity
             style={styles.btn}
-            onPress={() => navigation.navigate('profile')}>
+            onPress={() => navigation.navigate('profile',{id:userData._id})}>
             <AntDesign style={styles.btnText} name="edit" />
             <Text style={styles.btnText}>Edit Profile</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('myorders')}>
             <AntDesign style={styles.btnText} name="bars" />
             <Text style={styles.btnText}>My Orders</Text>
           </TouchableOpacity>
