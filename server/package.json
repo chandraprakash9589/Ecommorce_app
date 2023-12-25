@@ -1,12 +1,12 @@
 {
-  "name": "server",
+  "name": "ecommorse_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a demo_app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "chandraprakash_kushwaha",
   "license": "ISC"
 }

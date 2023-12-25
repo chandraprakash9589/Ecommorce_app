@@ -14,11 +14,15 @@ import Account from './screens/Account/Account';
 import Notification from './screens/Account/Notification';
 import Profile from './screens/Account/Profile';
 import MyOrders from './screens/Account/MyOrders';
+import Dashboard from './screens/admin/Dashboard';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 //routes
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
+    // <GestureHandlerRootView>
+
     <NavigationContainer>
       <Stack.Navigator initialRouteName='login'>
         <Stack.Screen
@@ -45,9 +49,13 @@ const App = () => {
         <Stack.Screen name="notifications" component={Notification} />
         <Stack.Screen name="profile" component={Profile} />
         <Stack.Screen name="myorders" component={MyOrders} />
-        <Stack.Screen name="cart" component={Cart} />     
+        <Stack.Screen name="cart" component={Cart} />   
+        <Stack.Screen name="dashboard" component={Dashboard} />     
+  
       </Stack.Navigator>
     </NavigationContainer>
+    // </GestureHandlerRootView>
+
   );
 };
 export default App;
