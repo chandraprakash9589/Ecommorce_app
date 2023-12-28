@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {StatusBar, Text, View} from 'react-native';
 import Home from './screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
@@ -15,11 +15,15 @@ import Notification from './screens/Account/Notification';
 import Profile from './screens/Account/Profile';
 import MyOrders from './screens/Account/MyOrders';
 import Dashboard from './screens/admin/Dashboard';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import SplashScreen from 'react-native-splash-screen'
+import OtpScreen from './components/OtpScreen/OtpScreen';
 
 //routes
 const Stack = createNativeStackNavigator();
 const App = () => {
+  useEffect(()=>{
+    SplashScreen.hide();
+  },[])
   return (
     // <GestureHandlerRootView>
 
@@ -51,7 +55,8 @@ const App = () => {
         <Stack.Screen name="myorders" component={MyOrders} />
         <Stack.Screen name="cart" component={Cart} />   
         <Stack.Screen name="dashboard" component={Dashboard} />     
-  
+        <Stack.Screen name="otpScreen" component={OtpScreen} />     
+
       </Stack.Navigator>
     </NavigationContainer>
     // </GestureHandlerRootView>

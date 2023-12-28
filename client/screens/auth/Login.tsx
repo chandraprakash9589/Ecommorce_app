@@ -11,17 +11,23 @@ import {
 import React, {useState} from 'react';
 import {login_signUp} from '../../assets/assets';
 import InputBox from '../../components/Form/InputBox';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-const handleLogin=()=>{
-if(!email ||!password){
-  return Alert.alert("Please add email or password")
-}
-Alert.alert("Login Successfully")
-navigation.navigate("home")
+  const [showPassword, setShowPassword] = useState(false);
 
-}
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const handleLogin = () => {
+    if (!email || !password) {
+      return Alert.alert('Please add email or password');
+    }
+    Alert.alert('Login Successfully');
+    navigation.navigate('home');
+  };
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={login_signUp} />
@@ -35,20 +41,26 @@ navigation.navigate("home")
         value={password}
         setValue={setPassword}
         placeholder={'Enter You Password'}
-        secureTextEntry={true}
+        secureTextEntry={!showPassword}
       />
+      <TouchableOpacity onPress={toggleShowPassword} style={styles.showPasswordIcon}>
+        <MaterialCommunityIcons
+          name={showPassword ? 'eye-off' : 'eye'}
+          size={30}
+          color="#aaa"      
+        />
+      </TouchableOpacity>
       <View style={styles.btnContainer}>
-        <TouchableOpacity style={styles.loginBtn} onPress={()=>handleLogin()}>
+        <TouchableOpacity style={styles.loginBtn} onPress={() => handleLogin()}>
           <Text style={styles.loginBtnText}>Login</Text>
         </TouchableOpacity>
         <Text>
-          Not a user yet ? Please{""}
-        
-        <Text style={styles.link}
-        onPress={()=>navigation.navigate("register")}
-        >
-          Register !
-        </Text>
+          Not a user yet ? Please{''}
+          <Text
+            style={styles.link}
+            onPress={() => navigation.navigate('register')}>
+            Register !
+          </Text>
         </Text>
       </View>
     </View>
@@ -68,6 +80,12 @@ const styles = StyleSheet.create({
   btnContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  showPasswordIcon: {
+    marginLeft:305,
+    top: -45,
+   
   },
   loginBtn: {
     backgroundColor: '#000000',
